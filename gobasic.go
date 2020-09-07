@@ -32,7 +32,7 @@ func InputRead() string {
 }
 
 func System(cmd string) {
-	output, err = exec.Command(cmd).Output();
+	output, err := exec.Command(cmd).Output();
 	ErrorHandler(err);
 	fmt.Println(string(output));
 }
