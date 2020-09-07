@@ -22,7 +22,7 @@ func ErrorHandler(err error){
 	}
 }
 
-func InputReader() string {
+func InputRead() string {
 	reader := bufio.NewReader(os.Stdin);
 	fmt.Print("> ");
 	text, _ := reader.ReadString('\n');
