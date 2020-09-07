@@ -5,9 +5,9 @@ import "net/url"
 
 func Urldecode(encoded_string string) string {
 	decoded_string, err := url.QueryUnescape(encoded_string);
-	ehandler(err);
+	ErrorHandler(err);
 	decoded_string, err = url.QueryUnescape(decoded_string);
-	ehandler(err);
+	ErrorHandler(err);
 	return decoded_string;
 }
 
