@@ -34,5 +34,5 @@ func InputRead() string {
 func System(cmd string) {
 	output, err := exec.Command(cmd).Output();
 	ErrorHandler(err);
-	return output
+	fmt.Println(string(output));
 }
