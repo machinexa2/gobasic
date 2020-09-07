@@ -1,7 +1,6 @@
 package gobasic
 
 import (
-	"fmt"
 	"bufio"
 	"fmt"
 	"os"
