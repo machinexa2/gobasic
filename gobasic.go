@@ -1,7 +1,13 @@
 package gobasic
 
-import "fmt"
-import "net/url"
+import (
+	"fmt"
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+	"net/url"
+)
 
 func Urldecode(encoded_string string) string {
 	decoded_string, err := url.QueryUnescape(encoded_string);
@@ -15,4 +21,12 @@ func ErrorHandler(err error){
 	if err != nil {
 		fmt.Println(err);
 	}
+}
+
+func InputReader() string {
+	reader := bufio.NewReader(os.Stdin);
+	fmt.Print("> ");
+	text, _ := reader.ReadString('\n');
+	text = strings.Replace(text, "\n", "", -1);
+	return text
 }
