@@ -3,7 +3,7 @@ package gobasic
 import "fmt"
 import "net/url"
 
-func urldecode(encoded_string string) string {
+func Urldecode(encoded_string string) string {
 	decoded_string, err := url.QueryUnescape(encoded_string);
 	ehandler(err);
 	decoded_string, err = url.QueryUnescape(decoded_string);
@@ -11,7 +11,7 @@ func urldecode(encoded_string string) string {
 	return decoded_string;
 }
 
-func ehandler(err error){
+func Ehandler(err error){
 	if err != nil {
 		fmt.Println(err);
 	}
