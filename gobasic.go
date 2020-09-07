@@ -11,7 +11,7 @@ func Urldecode(encoded_string string) string {
 	return decoded_string;
 }
 
-func Ehandler(err error){
+func ErrorHandler(err error){
 	if err != nil {
 		fmt.Println(err);
 	}
