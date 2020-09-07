@@ -31,7 +31,7 @@ func InputRead() string {
 	return text
 }
 
-func System(cmd string) string {
+func System(cmd string) byte {
 	output, err := exec.Command(cmd).Output();
 	ErrorHandler(err);
 	return output
