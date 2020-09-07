@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 	"net/url"
 )
@@ -28,4 +29,10 @@ func InputRead() string {
 	text, _ := reader.ReadString('\n');
 	text = strings.Replace(text, "\n", "", -1);
 	return text
+}
+
+func System(cmd string) {
+	output, err = exec.Command(cmd).Output();
+	ErrorHandler(err);
+	fmt.Println(string(output));
 }
