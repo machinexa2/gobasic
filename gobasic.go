@@ -40,14 +40,6 @@ func InputRead() string {
 	return text
 }
 
-func InputRead() string {
-	reader := bufio.NewReader(os.Stdin);
-	fmt.Print("> ");
-	text, _ := reader.ReadString('\n');
-	text = strings.Replace(text, "\n", "", -1);
-	return text
-}
-
 func System(cmd string) {
 	output, err := exec.Command(cmd).Output();
 	ErrorHandler(err);
