@@ -18,12 +18,19 @@ func Urldecode(encoded_string string) string {
 	return decoded_string;
 }
 
-func ErrorHandler(err error){
+func MajorErrorHandler(err error){
 	if err != nil {
 		fmt.Println(err);
-		panic("ALERT");
+		panic("Error Occured");
 	}
 }
+
+func MinorErrorHandler(err error){
+	if err != nil {
+		fmt.Println(err);
+	}
+}
+
 
 func ArgumentErrorHandler(err error){
 	if err != nil {
