@@ -46,7 +46,7 @@ func InputRead() string {
 func PrefilledInputRead(preinput string) string {
 	stdin, _ := readline.New("> ");
 	defer stdin.Close();
-	stdin.WriteStdin(preinput);
+	stdin.WriteStdin([]byte(preinput));
 	value, err := stdin.Readline()
 	ErrorHandler(err);
 	return value
