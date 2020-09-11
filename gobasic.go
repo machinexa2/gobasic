@@ -25,11 +25,11 @@ func ErrorHandler(err error){
 }
 
 func ArgumentErrorHandler(err error){
-	fmt.Println("Use -h/--help");
 	if err != nil {
+		fmt.Println("Use -h/--help");
 		fmt.Println(err);
+		os.Exit(0);
 	}
-	os.Exit(0);
 }
 
 
