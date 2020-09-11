@@ -23,6 +23,24 @@ func ErrorHandler(err error){
 	}
 }
 
+func ExitErrorHandler(err error){
+	if err != nil {
+		fmt.Println(err);
+	}
+	import "os"
+	os.Exit(0);
+}
+
+
+
+func InputRead() string {
+	reader := bufio.NewReader(os.Stdin);
+	fmt.Print("> ");
+	text, _ := reader.ReadString('\n');
+	text = strings.Replace(text, "\n", "", -1);
+	return text
+}
+
 func InputRead() string {
 	reader := bufio.NewReader(os.Stdin);
 	fmt.Print("> ");
