@@ -7,6 +7,7 @@ import (
 	"os/exec"
 	"strings"
 	"net/url"
+	"github.com/chzyer/readline"
 )
 
 func Urldecode(encoded_string string) string {
@@ -23,7 +24,8 @@ func ErrorHandler(err error){
 	}
 }
 
-func ExitErrorHandler(err error){
+func ArgumentErrorHandler(err error){
+	fmt.Println("Use -h/--help");
 	if err != nil {
 		fmt.Println(err);
 	}
@@ -35,9 +37,19 @@ func ExitErrorHandler(err error){
 func InputRead() string {
 	reader := bufio.NewReader(os.Stdin);
 	fmt.Print("> ");
-	text, _ := reader.ReadString('\n');
+	text, err := reader.ReadString('\n');
+	ErrorHandler(err);
 	text = strings.Replace(text, "\n", "", -1);
 	return text
+}
+
+func PrefilledInputRead(preinput string) string {
+	stdin, _ := readline.New("> ");
+	defer stdin.Close();
+	stdin.WriteStdin(preinput);
+	value, err := stdin.Readline()
+	ErrorHandler(err);
+	return value
 }
 
 func System(cmd string) {
