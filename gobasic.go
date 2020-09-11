@@ -27,7 +27,6 @@ func ExitErrorHandler(err error){
 	if err != nil {
 		fmt.Println(err);
 	}
-	import "os"
 	os.Exit(0);
 }
 
