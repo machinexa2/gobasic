@@ -21,6 +21,7 @@ func Urldecode(encoded_string string) string {
 func ErrorHandler(err error){
 	if err != nil {
 		fmt.Println(err);
+		panic("ALERT");
 	}
 }
 
