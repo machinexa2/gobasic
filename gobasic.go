@@ -25,12 +25,11 @@ func MajorErrorHandler(err error){
 	}
 }
 
-func MinorErrorHandler(err error){
+func ErrorHandler(err error){
 	if err != nil {
 		fmt.Println(err);
 	}
 }
-
 
 func ArgumentErrorHandler(err error){
 	if err != nil {
