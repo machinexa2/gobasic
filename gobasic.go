@@ -18,29 +18,6 @@ func Urldecode(encoded_string string) string {
 	return decoded_string;
 }
 
-func MajorErrorHandler(err error){
-	if err != nil {
-		fmt.Println(err);
-		panic("Error Occured");
-	}
-}
-
-func ErrorHandler(err error){
-	if err != nil {
-		fmt.Println(err);
-	}
-}
-
-func ArgumentErrorHandler(err error){
-	if err != nil {
-		fmt.Println("Use -h/--help");
-		fmt.Println(err);
-		os.Exit(0);
-	}
-}
-
-
-
 func InputRead() string {
 	reader := bufio.NewReader(os.Stdin);
 	fmt.Print("> ");
@@ -57,10 +34,4 @@ func PrefilledInputRead(preinput string) string {
 	value, err := stdin.Readline()
 	ErrorHandler(err);
 	return value
-}
-
-func System(cmd string) {
-	output, err := exec.Command(cmd).Output();
-	ErrorHandler(err);
-	fmt.Println(string(output));
 }
