@@ -11,7 +11,6 @@ func InArray(check string, list []string) bool {
         return false
 }
 
-
 func Input(prompt string, preinput string) string {
         stdin, _ := readline.New(prompt);
         defer stdin.Close();
