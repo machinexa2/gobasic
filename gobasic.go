@@ -18,7 +18,7 @@ func Urldecode(encoded_string string) string {
 func InputRead() string {
 	reader := bufio.NewReader(os.Stdin);
 	fmt.Print("> ");
-	text, err := reader.ReadString('\n');
+	text, _ := reader.ReadString('\n');
 	text = strings.Replace(text, "\n", "", -1);
 	return text
 }
