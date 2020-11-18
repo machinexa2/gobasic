@@ -4,15 +4,15 @@ import "bufio"
 import "fmt"
 import "os"
 import "strings"
-import "net/url"
+//import "net/url"
 import "github.com/chzyer/readline"
-
+/*
 func Urldecode(encoded_string string) string {
 	decoded_string, _ := url.QueryUnescape(encoded_string);
 	decoded_string, _ = url.QueryUnescape(decoded_string);
 	return decoded_string;
 }
-
+*/
 func InputRead() string {
 	reader := bufio.NewReader(os.Stdin);
 	fmt.Print("> ");
