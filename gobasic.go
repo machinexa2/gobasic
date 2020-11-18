@@ -1,13 +1,11 @@
 package gobasic
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strings"
-	"net/url"
-	"github.com/chzyer/readline"
-)
+import "bufio"
+import "fmt"
+import "os"
+import "strings"
+import "net/url"
+import "github.com/chzyer/readline"
 
 func Urldecode(encoded_string string) string {
 	decoded_string, _ := url.QueryUnescape(encoded_string);
@@ -30,3 +28,13 @@ func PrefilledInputRead(preinput string) string {
 	value, _ := stdin.Readline()
 	return value
 }
+
+func InArray(check string, list []string) bool {
+        for _, individual := range list {
+                if individual == check {
+                        return true
+                }
+        }
+        return false
+}
+
