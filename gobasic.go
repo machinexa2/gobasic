@@ -1,7 +1,6 @@
 package gobasic
 
 import "bufio"
-import "fmt"
 import "os"
 
 import "github.com/chzyer/readline"
