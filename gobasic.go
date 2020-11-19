@@ -1,5 +1,9 @@
 package gobasic
 
+import "bufio"
+import "fmt"
+import "os"
+
 import "github.com/chzyer/readline"
 
 func InArray(check string, list []string) bool {
@@ -17,4 +21,20 @@ func Input(prompt string, preinput string) string {
         stdin.WriteStdin([]byte(preinput));
         value, _ := stdin.Readline()
         return value
+}
+
+func ReadFile(filename string, c chan string) {
+	file, err := os.Open(filename)
+	if err != nil {
+		panic(err)
+	}
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		c <- scanner.Text()
+	}
+	if err := scanner.Err(); err != nil {
+		panic(err)
+	}
+	close(c)
+	file.Close()
 }
