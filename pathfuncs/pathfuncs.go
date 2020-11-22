@@ -1,4 +1,5 @@
 package pathfunctions
+import "strings"
 
 func urler(xpath string) string{
 	if !(strings.HasPrefix(xpath, "http://") || strings.HasPrefix(xpath, "https://")){
